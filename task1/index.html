@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Реализуйте HTML+CSS следующей страницы:</h1>
+
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <span class="hint">Полное имя, как оно указано в статьях</span>
+          <input type="text" id="name" name="name" />
+        </div>
+
+        <a href="#" class="add-name-btn">+ Добавить имя</a>
+        <hr class="divider" />
+
+        <div class="form-group">
+          <label for="workplace">Место работы</label>
+          <span class="hint"
+            >Пример: профессор математики, МГУ им. Ломоносова</span
+          >
+          <input type="text" id="workplace" name="workplace" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Электронная почта для подтверждения</label>
+          <span class="hint">Пример: kolmogorov@msu.ru</span>
+          <input type="email" id="email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="interests">Области интересов</label>
+          <span class="hint"
+            >Пример: топология, турбулентность, функциональный анализ</span
+          >
+          <input type="text" id="interests" name="interests" />
+        </div>
+
+        <div class="form-group">
+          <label for="website">Личная страница (необязательно)</label>
+          <span class="hint">Пример: http://www.msu.ru/~kolmogorov</span>
+          <input type="text" id="website" name="website" />
+        </div>
+
+        <button type="submit" class="submit-btn">Далее</button>
+      </form>
+    </div>
+  </body>
+</html>
