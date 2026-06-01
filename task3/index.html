@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Colors</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 24px;
+      }
+
+      .colors {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .color-box {
+        width: 140px;
+        height: 90px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 600;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+        transition: transform 0.15s ease;
+      }
+
+      .color-box:hover {
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="colors">
+        <div
+          v-for="(color, index) in colors"
+          :key="index"
+          class="color-box"
+          :style="{ backgroundColor: color.name }"
+          @click="randomizeColor(index)"
+        >
+          {{ color.name }}
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            colors: [
+              { name: "red" },
+              { name: "green" },
+              { name: "blue" },
+              { name: "yellow" },
+              { name: "purple" },
+            ],
+          };
+        },
+        methods: {
+          randomizeColor(index) {
+            const random = Math.floor(Math.random() * 16777215)
+              .toString(16)
+              .padStart(6, "0");
+            this.colors[index].name = `#${random}`;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
